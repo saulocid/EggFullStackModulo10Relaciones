@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Ejercicio003">
+  <ClassDiagramComponents>
+    <Class name="Ejercicio003" package="ejercicio003" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Baraja" package="Entities" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="cartas" type="ArrayList&lt;Carta&gt;" visibility="private"/>
+        <Field name="cantidad" type="Integer" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="ArrayList&lt;Carta&gt;" name="cartas"/>
+          <Argument type="Integer" name="cantidad"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCantidad" returnType="Integer" visibility="public"/>
+        <Method name="setCantidad" returnType="void" visibility="public">
+          <Argument type="Integer" name="cantidad"/>
+        </Method>
+        <Method name="getCartas" returnType="ArrayList&lt;Carta&gt;" visibility="public"/>
+        <Method name="setCartas" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Carta&gt;" name="cartas"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Carta" package="Entities" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="palo" type="String" visibility="private"/>
+        <Field name="numero" type="Integer" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="palo"/>
+          <Argument type="Integer" name="numero"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPalo" returnType="String" visibility="public"/>
+        <Method name="setPalo" returnType="void" visibility="public">
+          <Argument type="String" name="palo"/>
+        </Method>
+        <Method name="getNumero" returnType="Integer" visibility="public"/>
+        <Method name="setNumero" returnType="void" visibility="public">
+          <Argument type="Integer" name="numero"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="BarajaService" package="Services" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="leer" type="Scanner" visibility="public" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crearBaraja" returnType="Baraja" visibility="public"/>
+        <Method name="mostrarBaraja" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Carta&gt;" name="cartas"/>
+        </Method>
+        <Method name="barajar" returnType="void" visibility="public">
+          <Argument type="Baraja" name="baraja"/>
+        </Method>
+        <Method name="juego" returnType="void" visibility="public">
+          <Argument type="Baraja" name="baraja"/>
+        </Method>
+        <Method name="menu" returnType="Integer" visibility="public"/>
+        <Method name="opciones" returnType="void" visibility="public">
+          <Argument type="Integer" name="opc"/>
+          <Argument type="Baraja" name="baraja"/>
+        </Method>
+        <Method name="siguienteCarta" returnType="void" visibility="public">
+          <Argument type="Baraja" name="baraja"/>
+        </Method>
+        <Method name="cartasDisponibles" returnType="Integer" visibility="public">
+          <Argument type="Baraja" name="baraja"/>
+        </Method>
+        <Method name="darCartas" returnType="void" visibility="public">
+          <Argument type="Baraja" name="baraja"/>
+        </Method>
+        <Method name="cartasMonton" returnType="Integer" visibility="public">
+          <Argument type="Baraja" name="baraja"/>
+        </Method>
+        <Method name="noHayMas" returnType="void" visibility="public">
+          <Argument type="Baraja" name="baraja"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="Entities.Baraja" target="Entities.Carta" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Services.BarajaService" target="Entities.Baraja" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Services.BarajaService" target="Entities.Carta" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="cartas" source="Entities.Baraja" target="Entities.Carta" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Carta&gt;"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
