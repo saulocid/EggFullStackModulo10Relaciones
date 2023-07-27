@@ -107,9 +107,7 @@ public class ProgramService {
       for (int i = 0; i < 8; i++) {
          for (int j = 0; j < 6; j++) {
             aux[i][j] = auxiliar;
-
          }
-
       }
 
       boolean reubicar;
@@ -129,6 +127,7 @@ public class ProgramService {
                      if (aux[auxI][auxJ].getNombre().equals("")) {
                         System.out.println(esp.getNombre() + " tomó asiento");
                         aux[auxI][auxJ] = esp;
+                        esp.setDinero(esp.getDinero()-entrada);
                         cap--;
                      } else {
                         reubicar = true;

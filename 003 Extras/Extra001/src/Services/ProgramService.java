@@ -19,7 +19,7 @@ public class ProgramService {
          }
       } while (cantMasc < 0);
       System.out.println("");
-
+           
       for (int i = 0; i < cantMasc; i++) {
          Perro p = new Perro();
          System.out.println("Ingrese datos para el perro " + (i + 1));
